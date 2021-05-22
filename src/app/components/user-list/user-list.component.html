@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="col-4">
+  <div class="col-sm-4">
     <div class="fw-bolder fs-2">All Users.</div>
   </div>
-  <div class="col-4"></div>
-  <div class="col-4">
+  <div class="col-md-4 col-sm-1"></div>
+  <div class="col">
     <form class="d-flex">
       <input class="form-control me-sm-2" [(ngModel)]='searchText' type="text" name="name" placeholder="Search" (change)="searchByName()">
       <button type="button" (click)='cancelSearch()' *ngIf='searchText' class="btn btn-light mt-2 float-end">x</button>
@@ -13,7 +13,7 @@
 
 
 <div class="row mt-2">
-  <div class="col-4 p-3" *ngFor="let user of users; let i = index">
+  <div class="col-sm-12 col-md-4 p-2" *ngFor="let user of users; let i = index">
     <div class="card" *ngIf='i != editIndex'>
       <div class="card-body">
         <h4 class="card-title">{{ user.name }}, {{ user.age }} yrs</h4>
@@ -53,7 +53,7 @@
 
   </div>
 
-  <div class="col-4" *ngIf='!searchText'>
+  <div class="col-sm-12 col-md-4" *ngIf='!searchText'>
     <div class="card">
       <div class="card-body">
         <form>
