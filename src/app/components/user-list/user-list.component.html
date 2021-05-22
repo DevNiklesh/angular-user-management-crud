@@ -76,7 +76,7 @@
             </div>
           </div>
         </form>
-        <button type="button" (click)='createUser()' class="btn btn-primary mt-2 float-end">Add</button>
+        <button type="button" (click)='createUser()' class="btn btn-primary mt-2 float-end add-button" [disabled]='!(createUserObj.name && createUserObj.email && createUserObj.age && createUserObj.bio)'>Add</button>
       </div>
     </div>
   </div>

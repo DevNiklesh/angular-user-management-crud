@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
 
 import { UserListComponent } from './user-list.component';
 
@@ -8,6 +10,7 @@ describe('UserListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ FormsModule ],
       declarations: [ UserListComponent ]
     })
     .compileComponents();
@@ -19,7 +22,33 @@ describe('UserListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create UserList Component', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('should disable the Add button when createUserObj is invalid', () => {
+    component.createUserObj = {
+      name: 'Alisha',
+      email: 'alisha@alisha.com',
+      age: 25,
+      bio: ''
+    };
+    fixture.detectChanges();
+    const button = fixture.debugElement.query(By.css('.add-button'));
+    expect(button.nativeElement.disabled).toBeTruthy();
+  });
+
+  it('should disable the Add button when createUserObj is invalid', () => {
+    component.createUserObj = {
+      name: 'Alisha',
+      email: 'alisha@alisha.com',
+      age: 25,
+      bio: 'This is my new bio'
+    };
+    fixture.detectChanges();
+    const button = fixture.debugElement.query(By.css('.add-button'));
+    expect(button.nativeElement.disabled).toBeFalsy();
+  });
+
 });

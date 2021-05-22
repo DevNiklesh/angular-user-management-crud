@@ -37,7 +37,7 @@ export class UserListComponent implements OnInit {
     this.userService.create(data)
       .subscribe(res => {
         console.log(res);
-        // this.createUserObj = { name: '', email: '', age: 0, bio: ''};
+        this.createUserObj = { name: '', email: '', age: 0, bio: ''};
       }, err => {
         console.log(err);
       });
