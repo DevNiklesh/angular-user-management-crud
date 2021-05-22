@@ -1,0 +1,32 @@
+<div class="fw-bolder fs-2">Create New User.</div>
+<div class="submit-form mt-3">
+  <div *ngIf="!submitted">
+    <form>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" [(ngModel)]="user.name" name="name" class="form-control" id="name"
+          placeholder="Enter full name of user">
+      </div>
+      <div class="form-group mt-2">
+        <label for="email">Email address</label>
+        <input type="email" [(ngModel)]="user.email" name="email" class="form-control" id="email"
+          aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+      <div class="form-group mt-2">
+        <label for="age">Age</label>
+        <input type="number" [(ngModel)]="user.age" name="age" class="form-control" id="age" placeholder="Enter age">
+      </div>
+      <div class="form-group mt-2">
+        <label for="bio">Bio</label>
+        <textarea [(ngModel)]="user.bio" name="bio" class="form-control" id="bio" placeholder="About the user"
+          rows="3"></textarea>
+      </div>
+      <button type="submit" (click)='createUser()' class="btn btn-primary mt-3">Create</button>
+    </form>
+  </div>
+
+  <div *ngIf="submitted">
+    <h3>You successfully created a User!</h3>
+    <button class="btn btn-success" (click)="newUser()">Add New User</button>
+  </div>
+</div>
