@@ -5,8 +5,8 @@
   <div class="col-md-4 col-sm-1"></div>
   <div class="col">
     <form class="d-flex">
-      <input class="form-control me-sm-2" [(ngModel)]='searchText' type="text" name="name" placeholder="Search" (change)="searchByName()">
-      <button type="button" (click)='cancelSearch()' *ngIf='searchText' class="btn btn-light mt-2 float-end">x</button>
+      <input class="form-control me-sm-2" [(ngModel)]='searchText' type="text" name="name" placeholder="Search by fullname" (change)="searchByName()">
+      <button type="button" (click)='cancelSearch()' *ngIf='searchText' class="btn btn-secondary mt-2 float-end">x</button>
     </form>
   </div>
 </div>
